@@ -1,0 +1,820 @@
+\documentclass[12pt]{beamer}
+
+\usepackage{hyperref}	% for referencing
+\usepackage{tipa}		% for adding pipe symbol
+
+\usepackage{amsmath}	% for math functions and matrix
+
+\usepackage{multirow}	% for tables
+\usepackage{array}      % for tables
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% for multiple cloumn with line
+\usepackage{lipsum}
+\usepackage{multicol}
+\usepackage{color}
+\setlength{\columnsep}{10pt}
+\setlength{\columnseprule}{0.5pt}
+\def\columnseprulecolor{\color{black}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% for multiple cloumn with line
+
+\usetheme{AnnArbor}				%setting theme for beamer class
+\usecolortheme{whale,beaver}    %setting theme color for beamer class
+
+\title{\textbf{DOCUMENTATION ON LATEX}}
+\subtitle{Advanced Software Lab Assignment\\[10pt]\includegraphics[width=2cm]{img/logo.png}\\[5pt]
+University of Kalyani\\[5pt]
+Deep Dey\\[5pt] Roll No:03\\[5pt] \today}
+%\author{}
+\date{}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}[t]{\textbf{What is LATEX?}}
+\begin{itemize}
+
+\item LATEX is a document preparation system for high-quality typesetting. It is most often used for medium-to-large technical or scientific documents but it can be used for almost any form of publishing.
+
+\item LaTeX is not a word processor! Instead, LaTeX encourages authors not to worry too much about the appearance of their documents but to concentrate on getting the right content. 
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{\textbf{Features of LATEX}}
+\begin{itemize}
+\item Typesetting journal articles, technical reports, books, and slide presentations.
+\item Control over large documents containing sectioning, cross-references, tables and figures.
+\item Typesetting of complex mathematical formulas.
+\item Advanced typesetting of mathematics with AMS-LaTeX.
+\item Automatic generation of bibliographies and indexes.
+\item Multi-lingual typesetting.
+\item Inclusion of artwork, and process or spot colour.
+\item Using PostScript or Metafont fonts.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Getting Started}}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{itemize}
+\item To make documents in LaTex we use different \textbf{TAGS} and we define them by using a \textbf{Backslash(\textbackslash)}
+\item The first line of code in any LaTeX document is the \textbf{document class} declaration command.
+\item There are five
+standard classes distributed with LATEX:
+\textbf{article, report, book, letter, slides}
+\end{itemize}
+
+\column{0.5\textwidth}
+\textbf{-article} for simple or short documents.\\
+\textbf{-report} for small books and longer reports containing chapters.\\
+\textbf{-book} for books.\\
+\textbf{-letter} for letters, either business or personal.\\
+\textbf{-slides} for making transparencies for projection on a screen.
+\begin{verbatim}
+\documentclass{class_name}
+  
+\documentclass{article}
+for "an article document"
+\end{verbatim}
+
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Packages, Size, Margins and Spacing}}
+\begin{itemize}
+\item To use outside packages in LaTex we use
+\begin{verbatim}
+\usepackage[options ]{package }
+Here, \usepackage[a4paper, margin=1in]{geometry}
+\end{verbatim}
+used to set margin 1 inch and page size A4
+\item We define font size, number of cloumns in a page and also Page Type during documentclass declaration like-
+\begin{verbatim}
+\documentclass[12pt,twocolumn,letterpaper]{article}
+\end{verbatim}
+\item To add Vertical Spacing we use
+\begin{verbatim}
+\vspace{1cm}       -> Add 1 cm Vertical Spacing
+\end{verbatim}
+\item To add Horizontal Spacing we use
+\begin{verbatim}
+\hspace{1cm}       -> Add 1 cm Horizontal Spacing
+\end{verbatim}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Input File \& Title Page Structure}}
+\begin{itemize}
+\item LATEX input files must conform to a certain structure. 
+\begin{verbatim}
+\documentclass[options]{class}
+     Preamble
+     \begin{document}
+          Document text
+     \end{document}
+\end{verbatim}
+\item If you are using the article, report, or book class, you may want a title page for your
+document. To do this, you need to tell LATEX to generate the title page with the command "\textbackslash maketitle".
+\begin{verbatim}
+\title{This is the Title} % provide title info
+\author{My Name}          % provide author info
+\date{the date}           % provide date
+\maketitle                % print title page
+\end{verbatim}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Text Formatting and Alignment}}
+\begin{itemize}
+\item Basic Text Formatting syntax:
+\begin{verbatim}
+\textbf{Some Text}        % Make Some Text Bold
+\textit{Some Text}        % Make Some Text Italic
+\underline{Some Text}     % Underlined Some Text
+\end{verbatim}
+\item Text Alignment in Latex:
+\begin{verbatim}
+\begin{flushleft}
+     Make all text left-justified written 
+     within this scope
+\end{flushleft}
+
+\begin{flushright}
+     Make all text Right-justified
+\end{flushright}
+\end{verbatim}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Text Formatting and Alignment(Contd.)}}
+\begin{itemize}
+\item Text Alignment in Latex:
+\begin{verbatim}
+\begin{center}
+     Make all text center allign written
+\end{center}
+            
+\centering       % also used for center alignment
+\textsc{text}    % make text in UPPERCASE
+\large{text}     % make text larger than normal fort
+\Large{text}     % make text larger than large text
+\LARGE{text}     % make text larger than Large text
+\huge{text}      % make text larger than LARGE text
+\tiny text       % make text smaller than normal font
+\texttt{Every One} % change text font style                 
+\end{verbatim}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Paragraph Formatting}}
+\begin{itemize}
+\item To add indentation to a Paragraph we use 
+\begin{verbatim}
+\indent The indent Paragraph Started
+\end{verbatim}
+\item To remove indentation to a Paragraph we use 
+\begin{verbatim}
+\noindent The non-indent Paragraph Started
+\end{verbatim}
+\item To add indentation to a Paragraph after a section we use 
+\begin{verbatim}
+\usepackage{indentfirst}
+\end{verbatim}
+\item To start a new line in latex we use 
+\begin{verbatim}
+\\[*][extra-space]
+\end{verbatim}  
+It has an optional argument, extra-space, that specifies how much extra vertical space is to be inserted before the next line.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Paragraph Formatting(Contd.)}}
+\begin{itemize}
+\item To start a new paragraph with a line gap we use
+\begin{verbatim}
+\\*                it tells LaTeX not to 
+                   start a new page after the line.
+\end{verbatim}
+\item To start from a new Page or  Line
+\begin{verbatim}
+\newpage                % starts from a new page
+\pagebreak              % break the current page at 
+                        the point of the command
+\newline                % request a new line                        
+\end{verbatim}
+\item To draw horizontal line in a page we use
+\begin{verbatim}
+\rule[h]{w}{t}  % where h w and t are lengths
+                upon user's choice
+\hrulefill      % It draw a Horizonal line from
+                left end to right end of a page
+\end{verbatim}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Section, Sub-section \& TOC}}
+
+\begin{verbatim}
+  \section{Section}  <-Make a Section
+  Hello World!
+  \subsection{Subsection}  <-Make a sub-section
+  Structuring a document is easy!
+  \subsubsection{Subsubsection}  <-Make sub section
+  More text.                      of a sub-section
+  \section{Another section}  <-Make another Sectioin
+\end{verbatim}
+\begin{itemize}
+\item To show all Sections and sub sections in Table of Content we use
+\begin{verbatim}
+\tableofcontents
+\end{verbatim}
+\item To make all Sections and sub sections clickable in Table of Content we use a package
+\begin{verbatim}
+\usepackage{hyperref}
+\end{verbatim}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Un-ordered \& Ordered List}}
+\begin{itemize}
+\item Unordered List:
+\begin{verbatim}
+\begin{itemize}
+     \item Each entries are denoted with a bullet
+     \item Text in the entries may be of any length
+\end{itemize}
+\end{verbatim}
+\item Ordered List:
+\begin{verbatim}
+\begin{enumerate}
+     \item The labels consists of sequential numbers
+     \item The numbers starts at 1
+\end{enumerate}
+\end{verbatim}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Un-ordered \& Ordered List(Contd.)}}
+\begin{itemize}
+\item Changing the bullets of Unordered list:
+\begin{verbatim}
+\begin{itemize}   
+     \item[$-$]            % From bullet to dash
+     \item[$\ast$]         % From bullet to asterisk
+     \item[$\CHARACTER$]   % Use any math character
+\end{itemize}
+\end{verbatim}
+\item To change the number in Ordered list
+\begin{verbatim}
+Add \usepackage{enumitem} in your input file and
+now we can use
+% for Roman numbers
+\begin{enumerate}[label=(\roman*)]
+% for Alphabetical
+\begin{enumerate}[label=\alph*)]
+\end{verbatim}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Latex Math \& Equations}}
+\begin{itemize}
+\item Using inline math - embed formulas in your text	
+\begin{verbatim}
+This formula $f(x) = x^2$ is an example.
+\end{verbatim}
+\item The most useful math envorinment is the equation environment:
+\begin{verbatim}
+\begin{equation*}
+  1 + 2 = 3 
+\end{equation*}   % The Output is:
+\end{verbatim}
+\begin{equation*}
+  1 + 2 = 3 
+\end{equation*}
+\begin{verbatim}
+       or   
+\begin{equation} % This syntax add an equation no.
+  1 + 2 = 3 
+\end{equation}   % The Output is:
+\end{verbatim}
+\begin{equation}
+  1 + 2 = 3 
+\end{equation}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Latex Math \& Equations(Contd.)}}
+\begin{itemize}
+\item Greek and Hebrew letters:
+\begin{columns}
+\column{0.25\textwidth}
+\begin{itemize}
+\item[$\alpha$]\textbackslash alpha
+\item[$\beta$]\textbackslash beta
+\item[$\gamma$]\textbackslash gamma
+\item[$\pi$]\textbackslash pi
+\item[$\Theta$]\textbackslash Theta
+\end{itemize}
+
+\column{0.25\textwidth}
+\begin{itemize}
+\item[$\delta$]\textbackslash delta
+\item[$\Delta$]\textbackslash Delta
+\item[$\rho$]\textbackslash rho
+\item[$\sigma$]\textbackslash sigma
+\item[$\tau$]\textbackslash tau
+\end{itemize}
+
+\column{0.25\textwidth}
+\begin{itemize}
+\item[$\Pi$]\textbackslash Pi
+\item[$\varepsilon$]\textbackslash varepsilon
+\item[$\Sigma$]\textbackslash Sigma
+\end{itemize}
+\end{columns}
+\item When we use math syntax or matrix always include 
+\begin{verbatim}
+\usepackage{amsmath} package in your input file
+\end{verbatim}
+\item for more details about equations \href{https://drive.google.com/file/d/1_7dc3zLG99nnbX-k4bDiFqUAA9_w7kaT/view?usp=sharing}{\textbf{Please Click Here}}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Matrix \& Determinant}}
+The basic format to make matrix is
+\begin{verbatim}
+\begin{matrix}    % This syntax create a matrix 
+Item1 & Item2\\     without braces
+Item3 & Item4\\
+Item5 & Item6\\
+\end{matrix}
+
+\begin{Bmatrix}   %for a matrix with curly brackets
+
+\begin{vmatrix}    % This syntax create a determinant
+Item3 & Item4\\
+Item5 & Item6\\
+\end{vmatrix}
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Images \& Sub-images}}
+\begin{itemize}
+\item To insert a image we need to use some packages which are
+\begin{verbatim}
+\usepackage{graphicx}
+\end{verbatim}
+\item After package we need to insert image folder path
+\begin{verbatim}
+% Path related to the tex file containing folder path
+     \graphicspath{{images/}}  
+                           
+%Path in Windows format                           
+    \graphicspath{{c:/user/images/}}                              
+\end{verbatim}
+\item After insert package and image path the basic syntax to insert an image is
+\begin{verbatim}
+\begin{figure}
+     \includegraphics[scale=1]{image_name}
+\end{figure}
+\end{verbatim}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Images \& Sub-images(Contd.)}}
+\begin{itemize}
+\item Some addtional features:
+\begin{verbatim}
+\begin{figure}[h] 
+     \includegraphics[scale=1, angle=45]{image_name}
+     \caption{Image Caption}
+\end{figure}
+\end{verbatim}
+\item The parameter \textbf{scale=1} determines size of the image. Here we can also use the following code to set image size:
+\begin{verbatim}
+\includegraphics[width=3cm, height=4cm]{image_name}
+\end{verbatim}
+\item The parameter \textbf{angle=45}  rotates the picture 45 degrees counter-clockwise. To rotate the picture clockwise use a negative number.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Images \& Sub-images(Contd.)}}
+\begin{itemize}
+\item  \textbackslash begin$\{$figure$\}$[h], the parameter inside the brackets set the position of the figure. There is a list of parameter used to set position. They are
+
+\begin{itemize}
+\item[\textbf{H}]Places the float at precisely the location in the LATEX code. Requires the float package, though may cause problems occasionally. This is somewhat equivalent to h!.
+\item[\textbf{h}]Place the float here, i.e., approximately at the same point it occurs in the source text (however, not exactly at the spot)
+\item[\textbf{b}]Position at the bottom of the page.
+\item[\textbf{t}]Position at the top of the page.
+\end{itemize}
+
+\item \textbackslash caption$\{$Some text$\}$ This line of code add caption to an image
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Images \& Sub-images(Contd.)}}
+\begin{itemize}
+\item Labels and cross-references\textbf{:}
+\begin{verbatim}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.25\textwidth]{mesh}
+    \caption{a nice plot}
+    \label{fig:mesh1}
+\end{figure}
+
+As you can see in the figure \ref{fig:mesh1},
+the function grows near 0. Also, in the page 
+\pageref{fig:mesh1} is the same example.
+\end{verbatim}
+\item There are three commands that generate cross-references in this example. They are
+\end{itemize}
+\end{frame}
+\begin{frame}[fragile]{\textbf{Images \& Sub-images(Contd.)}}
+\begin{itemize}
+\item[ ] \textbf{\textbackslash label$\{$fig:mesh1$\}$} This will set a label for this figure. Since labels can be used in several types of elements within the document, it's a good practice to use a prefix, such as fig: in the example.
+\item[ ] \textbf{\textbackslash ref$\{$fi:gmesh1$\}$} This command will insert the number assigned to the figure. It's automatically generated and will be updated if insert some other figure before the referenced one.
+\item[ ] \textbf{\textbackslash pageref$\{$fig:mesh1$\}$} This prints out the page number where the referenced image appears.
+\item[ ] ** The \textbf{\textbackslash caption$\{$ $\}$} is mandatory to reference a figure **
+\item Another great characteristic in a LATEX document is the ability to automatically generate a list of figures. The syntax is
+\begin{verbatim}
+\listoffigures
+\end{verbatim}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Images \& Sub-images(Contd.)}}
+\begin{itemize}
+\item To use subfigure we are using float(subfloat). Subfloat is very useful for placing subfigures at any desired position to do so add \textbf{\textbackslash usepackage$\{$float,subfig$\}$} and the the following syntax:
+\begin{verbatim}
+\begin{figure}[h]
+\centering  % Make images center align
+\subfloat[Cation of Image_1]
+{\includegraphics[width=0.4\textwidth, height=40mm]
+{Image_name_1}\label{fig:one}}
+    \hfill	% This is to fill the space horizontally.
+\subfloat[Cation of Image_2]
+{\includegraphics[width=0.4\textwidth, height=40mm]
+{Image_name_2}\label{fig:three}}
+\caption{Caption for whole image segments}
+\end{figure}
+\end{verbatim}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Tables in Latex}}
+\begin{columns}
+\column{0.5\textwidth}
+\textbf{We are creating a simple table:}
+\begin{verbatim}
+\begin{center}
+\begin{table}[h]
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ cell1 & cell2 & cell3 \\ 
+ cell4 & cell5 & cell6 \\ 
+ cell7 & cell8 & cell9 \\ 
+ \hline
+\end{tabular}
+\caption{Some Text}
+\label{table:1}
+\end{table}
+\end{center}
+\end{verbatim}
+
+\column{0.5\textwidth}
+\textbf{$\{$\ \textpipe \ c \textpipe  \ c \textpipe \ c \textpipe \ $\}$} This declares that three columns, separated by a vertical line, are going to be used in the table. Each c means that the contents of the column will be centred, you can also use \textbf{r} to align the text to the right and \textbf{l} for left alignment.\\
+\centering
+\textbf{Output:}
+\begin{center}
+\begin{table}[h]
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ cell1 & cell2 & cell3 \\ 
+ cell4 & cell5 & cell6 \\ 
+ cell7 & cell8 & cell9 \\ 
+ \hline
+\end{tabular}
+\caption{Some Text}
+\end{table}
+\end{center}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Tables in Latex(Contd.)}}
+\textbf{\textbackslash hline} This will insert a horizontal line on top of the table and at the bottom too. There is no restriction on the number of times you can use \textbackslash hline.\\[5pt]
+
+\textbf{cell1 \& cell2 \& cell3 \textbackslash \textbackslash} Each \textbf{\&} is a cell separator and the double-backslash \textbackslash \textbackslash \ sets the end of this row.\\[5pt]
+
+\textbf{\textbackslash caption$\{$Some Text$\}$} This will add a caption to the table same as image caption.\\[5pt]
+
+\textbf{\textbackslash label$\{$table:1$\}$} and \textbf{\textbackslash ref$\{$table:1$\}$} They also work same as image label and image reference\\[5pt]
+
+\textbf{\textbackslash begin$\{$table$\}$[h]}, the parameter inside the brackets set the position of the table also same as image position. There is a list of parameter used to set position which are also same as image position options.
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Tables in Latex(Contd.)}}
+\textbf{When formatting a table a fixed length either for each column also can be set by following code:}
+\begin{verbatim}
+\begin{center}
+\begin{tabular}{ | m{2cm} | m{1cm}| m{1cm} | } 
+\hline
+cell1 dummy text dummy text & cell2 & cell3 \\ 
+\hline
+cell1 dummy text dummy text & cell5 & cell6 \\ 
+\hline
+cell7 & cell8 & cell9 \\ 
+\hline
+\end{tabular}
+\end{center}
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Tables in Latex(Contd.)}}
+\begin{columns}
+\column{0.5\textwidth}
+To set column width we need to add a package \textbackslash usepackage$\{$array$\}$\\[1cm]
+
+The parameter \textbf{m$\{$2cm$\}$} sets a length of 2cm for first column (1cm for the other two) and centres the text in the middle of the cell.\\[5pt]
+The aligning options are \textbf{m} for middle, \textbf{p} for top and \textbf{b} for bottom.
+
+\column{0.5\textwidth}
+\centering
+\textbf{Output:}
+\begin{center}
+\begin{tabular}{ | m{2cm} | m{1cm}| m{1cm} | } 
+\hline
+cell1 dummy text dummy text & cell2 & cell3 \\ 
+\hline
+cell1 dummy text dummy text & cell5 & cell6 \\ 
+\hline
+cell7 & cell8 & cell9 \\ 
+\hline
+\end{tabular}
+\end{center}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Tables in Latex(Contd.)}}
+\textbf{Multi-column and multi-row cells in LaTeX tables}\\[2mm]
+To use Multi-column and multi-row we need to use a package \textbf{\textbackslash usepackage$\{$multirow$\}$}\\[5mm]
+\textbf{Basic commands:}
+\begin{verbatim}
+%multi-column
+\multicolumn{number cols}{align}{text} % align: l,c,r
+
+%multi-row
+\multirow{number rows}{width}{text}
+
+%Using * as width in the multirow command, the text 
+argument’s natural width is used.
+\end{verbatim}
+\end{frame}
+\begin{frame}[fragile]{\textbf{Tables in Latex(Contd.)}}
+\textbf{Example of Multi-column and multi-row:}
+\begin{verbatim}
+\begin{table}[h]
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multicolumn{5}{|c|}{Multi-Column}             \\
+                           \hline
+\multirow{3}{*}{Multi-Row} & 7  & 8  & 9  & 10 \\ 
+                           \cline{2-5} 
+                           & 12 & 13 & 14 & 15 \\
+                           \cline{2-5} 
+                           & 17 & 18 & 19 & 20 \\
+                           \hline
+\end{tabular}
+\end{table}
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Tables in Latex(Contd.)}}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{verbatim}
+\multicolumn{5}{|c|}{Multi-Column} % To merge 5 columns
+
+% To merge 3 rows as output
+\multirow{3}{*}{Multi-Row}
+\end{verbatim}
+
+\textbf{\textbackslash cline$\{$2-5$\}$} is used to draw a horizontal line from 
+column no. 2 to column no. 5 (starting index 1).\\
+Actually \textbackslash cline$\{$ $\}$ command used to draw horizontal line within a fixed column range.\\
+
+• To create a table in landscape we used \textbf{\textbackslash begin$\{$sidewaystable$\}$} instead of \textbf{\textbackslash begin$\{$table$\}$}
+
+\column{0.5\textwidth}
+\centering
+\textbf{Output:}
+\begin{center}
+\begin{table}[h]
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multicolumn{5}{|c|}{Multi-Column}             \\ \hline
+\multirow{3}{*}{Multi-Row} & 7  & 8  & 9  & 10 \\ \cline{2-5} 
+                           & 12 & 13 & 14 & 15 \\ \cline{2-5} 
+                           & 17 & 18 & 19 & 20 \\ \hline
+\end{tabular}
+\end{table}
+\end{center}
+\centering
+\ \ 
+\textbf{**} Finally to create a list of tables we use \textbf{\textbackslash listoftables} command \textbf{**}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Bibliography in Latex}}
+\begin{itemize}
+\item We are using Bibtex for Bibliography in Latex.
+\item When using Bibtex, the bibliography style is set and the bibliography file is imported with the following two commands:
+\begin{verbatim}
+\bibliographystyle{stylename}
+\bibliography{bibfile}
+\end{verbatim}
+where \textbf{bibfile} is the name of the bibliography \textbf{.bib} file, without the extension and \textbf{stylename} is one of the following:
+\begin{itemize}
+\item abbrv
+\item acm
+\item plain and etc. 
+\end{itemize}
+\item This \textbackslash cite$\{$label$\}$ is used insert a citation where label is the label of a bibliographic entry in a .bib file depends on the bibliography style used. 
+\end{itemize}
+\end{frame}
+
+\begin{frame} [fragile]{\textbf{Bibliography in Latex(Contd.)}}
+\begin{itemize}
+\item Bibliographic references are usually kept in a bibliography file(.bib), this file consists of a list of records and fields. Each bibliography record holds relevant information for a single entry.\\
+\textbf{Syntax for .bib file:}
+\begin{verbatim}
+@article{einstein,
+    author =   "Albert Einstein",
+    title =    "{Zur Elektrodynamik bewegter 
+               K{\"o}rper}. ({German})
+    [{On} the electrodynamics of moving bodies]",
+    journal =  "Annalen der Physik",
+    volume =   "322",    number =   "10",
+    pages =    "891--921",
+    year =     "1905",
+    DOI =      "http://dx.doi.org/10.1002" }
+\end{verbatim}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Bibliography in Latex(Contd.)}}
+\textbf{@article$\{$...$\}$} \ This is the first line of a record entry, @article denotes the entry type and tells BibTeX that the information stored here is about an article. There are a lot more types like \textbf{book, conference, unpublished, misc, manual and etc}.\\[0.2cm]
+\textbf{einstein} \ The label einstein is assigned to this entry, is an identifier that can be used to refer this article within the document.\\[0.2cm]
+\textbf{author =   "Albert Einstein",} \ This is the first field in the bibliography entry, indicates that the author of this article is Albert Einstein. Several comma-separated fields can be added using the same syntax key = value, for instance: \textbf{title, pages, year, URL, volume, ISBN, journal, edition, chapter, copyright, etc.} 
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Bibliography in Latex(Contd.)}}
+\begin{itemize}
+\item Remember if you do not refer a particular entry in your bibliography it will note be shown in reference.
+\item  To make sure bibliography is present in table of contents add this following line of syntax right before bibliography style
+\begin{verbatim}
+\addcontentsline{toc}{section}{References}
+\bibliographystyle{plain}
+\bibliography{filename without .bib}
+\end{verbatim}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Chapter \& Page Style}}
+\begin{itemize}
+\item Basically \textbackslash chapter is used in \textbf{report} and \textbf{book} class.\\ The syntax is:
+\begin{verbatim}
+\chapter{chapter_name}
+\end{verbatim}
+\item To customize a chapter we can use a package:
+\begin{verbatim}
+\usepackage[style_name]{fncychap}
+\end{verbatim}
+where \textbf{style\_name} can be \textbf{Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, and Bjornstrup} depending upon user's choice.
+\item The \textbackslash pagestyle command changes the style from the current page on throughout the remainder of your document. The valid options are:
+\begin{itemize}
+\item \textbf{headings} \ Puts running headings on each page. The document style specifies what goes in the headings.
+\item \textbf{plain} \ Just a plain page number.
+\item \textbf{empty} \ Produces empty heads and feet - no page numbers.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Chapter \& Page Style(Contd.)}}
+\begin{itemize}
+\item we can also customize the header footer using \textbackslash pagestyle. So the syntax is:
+\begin{verbatim}
+\usepackage{fancyhdr} % Add this package
+\pagestyle{fancy}     % make style name "fancy"
+\fancyhf{}            
+\rhead{text}          % add text in left header
+\lhead{text}          % add text in right header
+\rfoot{\thepage}      % add page no. in right footer
+\lfoot{text}          % add text in right footer
+\end{verbatim}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Multi-column in Latex}}
+\begin{itemize}
+\item We can also use multiple column in a LATEX document by using the following code:
+\begin{verbatim}
+\usepackage{lipsum}   %add this package for dummytext
+\usepackage{multicol} %add this package for multi-row
+\usepackage{color}    %add this package for colour
+\setlength{\columnsep}{10pt} %add hspace between col
+\setlength{\columnseprule}{0.5pt} %set line width
+\def\columnseprulecolor{\color{black}}%set line color
+
+\begin{document}
+    \begin{multicols}{2}  %make tow columns
+        \lipsum[1-3]      %add some dummy text
+    \end{multicols}
+\end{document}
+\end{verbatim}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Multi-column in Latex(Contd.)}}
+\textbf{Output:}
+\begin{tiny}
+\begin{multicols}{2}
+\lipsum[1-3]
+\end{multicols}
+\end{tiny}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Beamer class(Introduction)}}
+\begin{itemize}
+\item \textbf{beamer} is one of the document class which is used to create slides. Basic structure of beamer class is:
+\begin{verbatim}
+\documentclass[12pt]{beamer} %set the document class
+\title{Some text}          %add title
+\subtitle{some text}       %add sub-title
+\author{author name}       %add author name
+\institute{institute name} %add institute name
+\date{date(optional)}      %add date
+
+\begin{frame}         %create a single slide
+\frametitle{text}     %heading of the slide
+\framesubtitle{text}  %sub-heading of the slide
+\titlepage            %print the title in a slide
+\end{frame}           %end the created slide
+\end{verbatim}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Beamer class(Themes)}}
+\begin{itemize}
+\item In beamer class we can also use custom theme for slide.The basic syntax is:
+\begin{verbatim}
+\usetheme{AnnArbor}           %setting theme
+\usecolortheme{whale,beaver}  %setting theme color
+\end{verbatim}
+\item To know more about themes visit: \href{https://deic-web.uab.cat/~iblanes/beamer_gallery/index.html}{\textbf{Beamer Theme Gallery}}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Beamer class(Pause)}}
+The \textbf{pause} command tells Beamer to make a new PDF page for what follows. This can be done basically anywhere.\\
+\textbf{Latex Syntax for pause:}
+\begin{verbatim}
+\begin{frame}
+
+Some content
+ \pause
+ Some more content
+\end{verbatim}
+\textbackslash end$\{$frame$\}$\\[0.2in]
+In the above command it will create 2 slides where 1st slide print only some content but the 2nd slide will show some content with Some more content that increase code reusability.
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Beamer class(Table of Contents)}}
+\begin{itemize}
+\item To add table of content we use the following command:
+\begin{verbatim}
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents
+\end{verbatim} \textbackslash end$\{$frame$\}$\\[0.2in]
+\item Remember one thing \textbf{\textbackslash tableofcontents} only shows sections and sub-sections.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\textbf{Beamer class(Table of Contents(Contd.))}}
+\begin{itemize}
+\item It's also possible to put the table of contents at the beginning of each section and highlight the title of the current section. Just add the code below:
+\begin{verbatim}
+\AtBeginSection[]{
+\begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents[currentsection]
+\end{verbatim}\textbackslash end$\{$frame$\}\}$
+\item If you use \textbackslash AtBeginSubsection[] instead of \textbackslash AtBeginSection[], the table of contents will appear at the beginning of each subsection.
+\item And other features of beamer class is pretty much same as other document class.
+\end{itemize}
+\end{frame}
+\end{document}

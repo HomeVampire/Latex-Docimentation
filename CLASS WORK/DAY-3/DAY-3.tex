@@ -1,0 +1,49 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{graphicx}
+\graphicspath{{IMAGES/}}
+\usepackage{subcaption}
+
+\title{OUR THIRD CLASS}
+\author{Deep Dey}
+\date{\today}
+
+\begin{document}
+    
+    \maketitle
+    \hrulefill
+    \tableofcontents
+    \pagebreak
+    
+    \section{Introduction}
+     All Intel® desktop boards are evaluated as Information Technology Equipment (I.T.E.) for use in personal computers (PC) for installation in homes, offices, schools, computer rooms, and similar locations. The suitability of this product for other PC or embedded non-PC applications or other environments, such as medical, industrial, alarm systems, test equipment etc. may not be supported without further evaluation by Intel.\\
+     
+     \begin{center}
+     
+     \begin{figure}[ht]
+\begin{subfigure}{.5\linewidth}
+  \centering
+  % include first image
+  \includegraphics[width=1\linewidth]{I1.jpg}  
+  \caption{Put your sub-caption here}
+  \label{fig:sub-first}
+\end{subfigure}
+\begin{subfigure}{.5\linewidth}
+  \centering
+  % include second image
+  \includegraphics[width=1\linewidth]{I1.jpg}  
+  \caption{Put your sub-caption here}
+  \label{fig:sub-second}
+\end{subfigure}
+\caption{Put your caption here}
+\label{fig:fig}
+\end{figure}
+     
+     \end{center}
+     
+     All Intel® desktop boards are evaluated as Information Technology Equipment (I.T.E.) for use in personal computers (PC) for installation in homes, offices, schools, computer rooms, and similar locations. The suitability of this product for other PC or embedded non-PC applications or other environments, such as medical, industrial, alarm systems, test equipment etc. may not be supported without further evaluation by Intel.\\
+     
+     See figure for referenceing \ref{fig:hoo}
+
+\end{document}

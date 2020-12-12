@@ -1,0 +1,20 @@
+\begin{thebibliography}{1}
+
+\bibitem{lutz2001programming}
+Mark Lutz.
+\newblock {\em Programming python}.
+\newblock " O'Reilly Media, Inc.", 2001.
+
+\bibitem{pedregosa2011scikit}
+Fabian Pedregosa, Ga{\"e}l Varoquaux, Alexandre Gramfort, Vincent Michel,
+  Bertrand Thirion, Olivier Grisel, Mathieu Blondel, Peter Prettenhofer, Ron
+  Weiss, Vincent Dubourg, et~al.
+\newblock Scikit-learn: Machine learning in python.
+\newblock {\em the Journal of machine Learning research}, 12:2825--2830, 2011.
+
+\bibitem{rossum1995python}
+Guido Rossum.
+\newblock Python reference manual.
+\newblock 1995.
+
+\end{thebibliography}

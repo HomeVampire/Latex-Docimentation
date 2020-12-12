@@ -1,0 +1,12 @@
+\frametitle{\textbf {Beamer class(Table of Contents(Contd.))}}
+\begin{itemize}
+\item It's also possible to put the table of contents at the beginning of each section and highlight the title of the current section. Just add the code below:
+\begin{verbatim}
+\AtBeginSection[]{
+\begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents[currentsection]
+\end{verbatim}\textbackslash end$\{$frame$\}\}$
+\item If you use \textbackslash AtBeginSubsection[] instead of \textbackslash AtBeginSection[], the table of contents will appear at the beginning of each subsection.
+\item And other features of beamer class is pretty much same as other document class.
+\end{itemize}
